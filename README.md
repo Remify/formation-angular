@@ -1,6 +1,6 @@
-# formation-angular
+# Formation Angular
 
-Documents :
+Documents : à venir
 - Presentation ppt : 
 - Source : https://github.com/Remify/formation-angular
 
@@ -9,6 +9,7 @@ Documents :
 ### Logiciels 
 - VSCode : https://code.visualstudio.com/Download
 - Node & npm : https://nodejs.org/en/download/ 
+- Git : https://git-scm.com/downloads
 
 ## Documentation
 
