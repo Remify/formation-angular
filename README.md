@@ -8,6 +8,7 @@ Documents : à venir
 
 ### Logiciels 
 - VSCode : https://code.visualstudio.com/Download
+- Angular Essentials Plugin : https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials
 - Node & npm : https://nodejs.org/en/download/ 
 - Git : https://git-scm.com/downloads
 
