@@ -16,3 +16,7 @@ Documents : à venir
 
 - Documentation Angular : [Officielle](https://angular.io/docs) | 
 - Reactive Programming : [Introduction](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) | [RxJS Docs](http://reactivex.io/rxjs/) | [Comprendre RxJS](http://rxmarbles.com/)
+
+## Les sessions
+
+- [Session 1](./session1.md)
