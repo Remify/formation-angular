@@ -30,3 +30,17 @@ Regarder l'oganisation du projet :
 3. Créez le layout de votre todo-app dans `app.component.html`
 
     Le layout devra être centré autour d'un champ input et d'une liste de texte.
+
+4. Afin de faciliter le travail sur les interfaces, ajoutons bootstrap !
+
+Installer les dépendances Bootstrap et font-awesome.
+
+    npm install --save  bootstrap font-awesome
+
+Ajouter les styles bootstrap et font-awesome au projet dans `./angular-cli.json`
+
+    "styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
+      ],
