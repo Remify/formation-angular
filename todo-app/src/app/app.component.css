@@ -1,0 +1,10 @@
+
+.todo-wrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 600px;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+}

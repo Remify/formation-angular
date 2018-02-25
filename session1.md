@@ -27,4 +27,6 @@ Regarder l'oganisation du projet :
 
     **Quel comportement pouvons nous apercevoir ?**
 
+3. Créez le layout de votre todo-app dans `app.component.html`
 
+    Le layout devra être centré autour d'un champ input et d'une liste de texte.
