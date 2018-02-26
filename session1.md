@@ -57,5 +57,19 @@ Nous allons créer un composant qui va servir de représentation pour 1 tâche t
 
 - Ajoutez le composant `TodoComponent` à `AppComponent` avec sa balise.
 
+6. Créez la classe représentant une tâche.
+
+Pour générer la class Todo.ts dans le dossier models avec la CLI :
+
+    ng g class models/todo
+
+Ajoutez à la classe Todo les propriétés `title` et `completed`.
+
+7. Modifiez `TodoComponent` pour qu'il représente une tâche 
+
+A l'aide du decorateur `@Input()` faites un passage de propriété d'un objet de la classe **Todo** à `TodoComponent`
+
+    @Input() task: Todo;
+
 
 <!-- Todo pipes  -->
