@@ -8,10 +8,22 @@ import { Todo } from './models/todo';
 })
 export class AppComponent {
   title = 'todo app';
+  newTodoText: string;
   todos: Todo[] = [
     new Todo('Hello World'),
     new Todo('Bonjour Monde'),
     new Todo('Allez faire les courses'),
   ];
 
+  addTodo(e) {
+    const title = e.target.value;
+    if (title) {
+      this.todos.push(new Todo(title));
+    }
+  }
+
+  onTodoDelete(t: Todo) {
+    console.log('onTodoDelete', t);
+    this.todos.splice(this.todos.indexOf(t), 1);
+  }
 }

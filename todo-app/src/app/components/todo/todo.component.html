@@ -1,11 +1,16 @@
-<div class="d-flex">
-  <div class="completed">
-    <label class="container">
-      <input type="checkbox" [(ngModel)]="task.completed">
-      <span class="checkmark"></span>
-    </label>
+<div class="d-flex justify-content-between">
+  <div class="d-flex ">
+    <div class="completed">
+      <label class="container">
+        <input type="checkbox" [(ngModel)]="task.completed">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="title ml-1">
+      {{ task.title }}
+    </div>
   </div>
-  <div class="title ml-1">
-    {{ task.title }}
+  <div class="delete text-danger mr-2 hidden">
+      <i class="fa fa-times pointer" (click)="onDeleteClick()"></i>
   </div>
 </div>
