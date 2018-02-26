@@ -80,4 +80,20 @@ Faites en sorte que `TodoComponent` affiche l'état d'une tâche (completed & ti
 Dans AppComponent, créez une liste de Todo.
 
 Afficher une liste de composants TodoComponent à l'aide de la balise `*ngFor`
+
+9. Gérez un compteur de tâches restantes
+
+Faire un double binding entre la propriété .completed et une checkbox.
+
+Supprimer la liste à puce. 
+
+Ajouter ce code à la fin de AppComponent :
+
+
+    <pre>
+      {{ todos | json }}
+    </pre>
+
+**Que se passe-t-il ? Que pouvez vous en déduire ?**
+
 <!-- Todo pipes  -->
