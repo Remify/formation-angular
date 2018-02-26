@@ -1,8 +1,10 @@
 # Formation Angular
 
-Documents : à venir
+Documents :
 - Presentation ppt : 
 - Source : https://github.com/Remify/formation-angular
+
+Exemple application : http://todomvc.com/examples/angular2/
 
 ## Prérequis
 
