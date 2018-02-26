@@ -71,5 +71,8 @@ A l'aide du decorateur `@Input()` faites un passage de propriété d'un objet de
 
     @Input() task: Todo;
 
+Créer une tâche dans AppComponent et passez la à `TodoComponent`.
+
+    
 
 <!-- Todo pipes  -->
