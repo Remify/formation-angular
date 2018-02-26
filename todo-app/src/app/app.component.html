@@ -1,17 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<main role="main" class="container todo-wrapper">
 
-<div class="todo-wrapper">
   <div class="todo-wrapper--title">
     <h1>Todos</h1>
   </div>
   <div class="todo-wrapper--input">
-    <input type="text">
-  </div>
-  <div class="todo-wrapper--todos">
-    <ul>
-      <li>Todo 1</li>
-      <li>Todo 2</li>
-      <li>Todo 3</li>
-    </ul>
-  </div>
-</div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="todo">
+      </div>
+    </div>
+    <div class="todo-wrapper--todos">
+      <ul>
+        <li><app-todo></app-todo></li>
+        <li>Todo 2</li>
+        <li>Todo 3</li>
+      </ul>
+    </div>
+
+
+</main>

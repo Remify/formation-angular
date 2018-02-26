@@ -21,6 +21,8 @@ Regarder l'oganisation du projet :
 * Quel est la balise de AppComponent ?
 * Où est appelé AppComponent ?
 
+    Voir aussi : https://angular.io/guide/architecture
+
 2. Créez un champ input qui modifie la propriété `title` à l'aide de la directive `ngModel` 
 
     Voir [documentation](https://angular.io/tutorial/toh-pt1#edit-the-hero)
@@ -44,3 +46,16 @@ Ajouter les styles bootstrap et font-awesome au projet dans `./angular-cli.json`
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
+
+Nous sommes maintenant prêt à créer nos composants todo !
+
+5. Créez un composant todo 
+
+Nous allons créer un composant qui va servir de représentation pour 1 tâche todo. Ce composants se trouvera dans un dossier `components`.
+
+    ng g c components/todo
+
+- Ajoutez le composant `TodoComponent` à `AppComponent` avec sa balise.
+
+
+<!-- Todo pipes  -->
