@@ -67,12 +67,17 @@ Ajoutez à la classe Todo les propriétés `title` et `completed`.
 
 7. Modifiez `TodoComponent` pour qu'il représente une tâche 
 
-A l'aide du decorateur `@Input()` faites un passage de propriété d'un objet de la classe **Todo** à `TodoComponent`
+A l'aide du decorateur `@Input()` passez une tâche *Todo* à `TodoComponent`
 
     @Input() task: Todo;
 
 Créer une tâche dans AppComponent et passez la à `TodoComponent`.
 
-    
+Faites en sorte que `TodoComponent` affiche l'état d'une tâche (completed & title)
 
+8. Afficher une liste de TodoComponent
+
+Dans AppComponent, créez une liste de Todo.
+
+Afficher une liste de composants TodoComponent à l'aide de la balise `*ngFor`
 <!-- Todo pipes  -->
