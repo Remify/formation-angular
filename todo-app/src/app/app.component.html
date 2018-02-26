@@ -11,13 +11,10 @@
       <input type="text" class="form-control" placeholder="todo">
       </div>
     </div>
-    <div class="todo-wrapper--todos">
-      <ul>
-        <li><app-todo [task]="aTodo"></app-todo></li>
-        <li>Todo 2</li>
-        <li>Todo 3</li>
-      </ul>
+    <div class="todo-wrapper--todos d-flex flex-column">
+      <div *ngFor="let todo of todos" class="p-1">
+        <app-todo [task]="todo"></app-todo>
+      </div>
     </div>
-
 
 </main>

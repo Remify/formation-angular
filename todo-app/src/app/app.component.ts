@@ -8,5 +8,10 @@ import { Todo } from './models/todo';
 })
 export class AppComponent {
   title = 'todo app';
-  aTodo: Todo = new Todo('Hello World');
+  todos: Todo[] = [
+    new Todo('Hello World'),
+    new Todo('Bonjour Monde'),
+    new Todo('Allez faire les courses'),
+  ];
+
 }

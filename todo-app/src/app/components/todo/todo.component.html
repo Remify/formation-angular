@@ -1,7 +1,9 @@
-
 <div class="d-flex">
   <div class="completed">
-    {{ task.completed }}
+    <label class="container">
+      <input type="checkbox" [(ngModel)]="task.completed">
+      <span class="checkmark"></span>
+    </label>
   </div>
   <div class="title ml-1">
     {{ task.title }}
