@@ -1,0 +1,23 @@
+<main role="main" class="container todo-wrapper">
+
+  <div class="todo-wrapper--title">
+    <h1>Todos</h1>
+  </div>
+  <div class="todo-wrapper--input">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="todo" autofocus="" (keyup.enter)="addTodo($event)">
+    </div>
+  </div>
+  <div class="todo-wrapper--todos d-flex flex-column">
+    <div *ngFor="let todo of todos" class="p-1">
+      <app-todo [task]="todo" (onDelete)="onTodoDelete($event)"></app-todo>
+    </div>
+  </div>
+
+  <pre>
+    {{ todos | json }}
+  </pre>
+</main>
