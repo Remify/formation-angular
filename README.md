@@ -1,7 +1,7 @@
 # Formation Angular
 
 Documents :
-- Presentation ppt : 
+- Presentation ppt : [slides](./slides.pdf)
 - Source : https://github.com/Remify/formation-angular
 
 Exemple application : http://todomvc.com/examples/angular2/
