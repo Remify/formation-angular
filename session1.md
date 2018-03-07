@@ -106,4 +106,4 @@ Ajouter ce code à la fin de AppComponent :
 ### 10. Intégrez les fonctionnalités pour Ajouter et Supprimer une tâche en utilisant des évènements. 
 
 Indices : @Output(), (keyup), (click)
-<!-- Todo pipes  -->
+    
