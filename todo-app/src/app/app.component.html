@@ -6,7 +6,7 @@
   <div class="todo-wrapper--input">
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text pointer" (click)="completeAll(todos)" id="basic-addon1" *ngIf="countCompleted(todos) < todos.length; else allCompleted">
+        <span class="input-group-text pointer" (click)="completeAll()" id="basic-addon1" *ngIf="countCompleted(todos) < todos.length; else allCompleted">
             <i class="fa fa-angle-right"></i>
         </span>
         <ng-template #allCompleted>
@@ -25,6 +25,6 @@
   </div>
   <div class="todo-footer d-flex justify-content-between" *ngIf="todos.length > 0">
     <div>{{ pendingTasks(todos) }}  tâche<span *ngIf="pendingTasks(todos) > 1">s</span> restante<span *ngIf="pendingTasks(todos) > 1">s</span></div>
-    <div class="todo-footer--clear" *ngIf="countCompleted(todos) > 0" (click)="clearCompleted(todos)">Nettoyer</div>
+    <div class="todo-footer--clear" *ngIf="countCompleted(todos) > 0" (click)="clearCompleted()">Nettoyer</div>
   </div>
 </main>

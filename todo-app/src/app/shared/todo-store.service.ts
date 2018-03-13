@@ -23,10 +23,10 @@ export class TodoStoreService {
   }
 
   clearCompleted() {
-    this.todos = this.todos.filter(t => !t.completed)
+    this.todos = this.todos.filter(t => !t.completed);
   }
 
-  completeAll(t) {
+  completeAll() {
     this.todos = this.todos.map(t => {
       t.completed = true;
       return t;

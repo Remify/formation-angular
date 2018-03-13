@@ -11,17 +11,18 @@ export class AppComponent {
   title = 'todo app';
   newTodoText: string;
   todos: Todo[];
-  constructor(private store: TodoStoreService) {}
+  constructor(private store: TodoStoreService) {
+    this.todos = this.store.todos;
+  }
   
   addTodo(e) {
-    const title = e.target.value;
-    if (title) {
-      this.todos.push(new Todo(title));
-    }
+    const title: string = e.target.value;
+    this.store.add(title);
   }
 
   onTodoDelete(t: Todo) {
-    this.todos.splice(this.todos.indexOf(t), 1);
+    console.log(t)
+    this.store.delete(t);
   }
 
   pendingTasks(tasks: Todo[]): number {
@@ -33,20 +34,14 @@ export class AppComponent {
   }
 
   clearCompleted(tasks: Todo[]) {
-    this.todos = this.todos.filter(t => !t.completed)
+    this.store.clearCompleted();
   }
 
-  completeAll(tasks: Todo[]) {
-    this.todos = tasks.map(t => {
-      t.completed = true;
-      return t;
-    });
+  completeAll() {
+    this.store.completeAll();
   }
 
   uncompleteAll(tasks: Todo[]) {
-    this.todos = tasks.map(t => {
-      t.completed = false;
-      return t;
-    });
+    this.store.uncompleteAll();
   }
 }
