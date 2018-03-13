@@ -1,3 +1,4 @@
+import { TodoStoreService } from './shared/todo-store.service';
 import { Component } from '@angular/core';
 import { Todo } from './models/todo';
 
@@ -9,12 +10,9 @@ import { Todo } from './models/todo';
 export class AppComponent {
   title = 'todo app';
   newTodoText: string;
-  todos: Todo[] = [
-    new Todo('Hello World'),
-    new Todo('Bonjour Monde'),
-    new Todo('Allez faire les courses'),
-  ];
-
+  todos: Todo[];
+  constructor(private store: TodoStoreService) {}
+  
   addTodo(e) {
     const title = e.target.value;
     if (title) {
@@ -23,7 +21,6 @@ export class AppComponent {
   }
 
   onTodoDelete(t: Todo) {
-    console.log('onTodoDelete', t);
     this.todos.splice(this.todos.indexOf(t), 1);
   }
 
