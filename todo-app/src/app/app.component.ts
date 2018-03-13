@@ -26,4 +26,30 @@ export class AppComponent {
     console.log('onTodoDelete', t);
     this.todos.splice(this.todos.indexOf(t), 1);
   }
+
+  pendingTasks(tasks: Todo[]): number {
+    return tasks.filter(t => !t.completed).length;
+  }
+
+  countCompleted(tasks: Todo[]): number {
+    return tasks.filter(t => t.completed).length;
+  }
+
+  clearCompleted(tasks: Todo[]) {
+    this.todos = this.todos.filter(t => !t.completed)
+  }
+
+  completeAll(tasks: Todo[]) {
+    this.todos = tasks.map(t => {
+      t.completed = true;
+      return t;
+    });
+  }
+
+  uncompleteAll(tasks: Todo[]) {
+    this.todos = tasks.map(t => {
+      t.completed = false;
+      return t;
+    });
+  }
 }

@@ -1,5 +1,5 @@
 import { Todo } from './../../models/todo';
-import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
+  isEditing: boolean = false;
   @Input() task: Todo;
   @Output() onDelete: EventEmitter<Todo> = new EventEmitter<Todo>();
 
@@ -18,6 +19,14 @@ export class TodoComponent implements OnInit {
 
   onDeleteClick() {
     this.onDelete.emit(this.task);
+  }
+
+  setToEditable(inputText) {
+    this.isEditing = true;
+  }
+
+  onBlur() {
+    this.isEditing = false;
   }
 
 }

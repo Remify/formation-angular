@@ -6,8 +6,11 @@
         <span class="checkmark"></span>
       </label>
     </div>
-    <div class="title ml-1">
-      {{ task.title }}
+    <div class="title ml-1" (dblclick)="setToEditable()">
+      <span *ngIf="!isEditing" [class.completed]="task.completed">
+        {{ task.title }}
+      </span>
+      <input class="form-control" [hidden]="!isEditing" type="text" [(ngModel)]="task.title" (blur)="onBlur()">
     </div>
   </div>
   <div class="delete text-danger mr-2 hidden">
