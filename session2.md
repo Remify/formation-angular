@@ -43,3 +43,73 @@ Voir aussi la classe `BehaviorSubject`
 ### 5. Ecrire dans le localStorage
 
 Enregistrer chaque changement dans le localStorage.
+
+### 6. Création d'un service Http
+
+Créer un service pour faire les requêtes http avec la commande :
+
+    ng g service shared/http
+
+Puis ajouter le service nouvellement créé à AppModule
+
+    ...
+    providers: [TodoStoreService, HttpService],
+    ...
+
+Ajouter HttpClient à notre service :
+
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+
+    @Injectable()
+    export class HttpService {
+
+        constructor(private http: HttpClient) {
+        }
+
+    }
+
+Et HttpModule à AppModule
+
+    ...
+      imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule
+    ],
+    ...
+
+### 7. Premières requêtes
+
+Créez une fonction qui **retourne** une requête `get` à l'adresse du serveur :
+
+
+    getTodos() {
+        return this.http.get(URL_SERVEUR)
+    }
+
+Appelez getTodos dans le constructeur de StoreService et à l'aide de la méthode `subscribe`, executez la requête :
+
+    this.todoService.getTodos().subscribe((res: Todo[]) => {
+      console.log('todos', res);
+      this.todos.next(res);
+    });
+  }
+
+### 8. Intégration du CRUD
+
+Dans HttpService, créez les 4 méthodes :
+
+    get
+    post
+    put
+    delete
+
+Puis modifier StoreService pour intégrer les méthodes :
+ 
+    add()
+    delete()
+    update()
+    clearCompleted()
+    completeAll()
+    uncompleteAll()
