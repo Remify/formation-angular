@@ -1,42 +1,78 @@
+import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/todo';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class TodoStoreService {
 
-  public todos: Todo[] = [];
-  constructor() { }
+  public todos: BehaviorSubject<Todo[]> = new BehaviorSubject([]);
+
+  constructor(private todoService: HttpService) {
+    this.todoService.getTodos().subscribe((res: Todo[]) => {
+      this.todos.next(res);
+    });
+  }
 
   add(title: string) {
     if (title) {
-      this.todos.push(new Todo(title));
+      const todos = this.todos.getValue();
+      todos.push(new Todo(title));
+
+      this.todos.next(todos);
     }
   }
   
   delete(t: Todo) {
-    this.todos.splice(this.todos.indexOf(t), 1);
+
+    const todos = this.todos.getValue();
+    todos.splice(todos.indexOf(t), 1);
+    
+    
+    this.todos.next(todos);
   }
   
   update(old: Todo, title: string) {
-    const i = this.todos.indexOf(old);
-    this.todos[i] = new Todo(title)
+
+    const todos = this.todos.getValue();
+    const i = todos.indexOf(old);
+    todos[i] = new Todo(title)
+    
+    this.todos.next(todos);
+
   }
 
   clearCompleted() {
-    this.todos = this.todos.filter(t => !t.completed);
+    
+    let todos = this.todos.getValue();
+    todos = todos.filter(t => !t.completed);
+
+    this.todos.next(todos);
   }
 
   completeAll() {
-    this.todos = this.todos.map(t => {
+
+    let todos = this.todos.getValue();
+    
+    todos = todos.map(t => {
       t.completed = true;
       return t;
     });
+    
+    
+    this.todos.next(todos);
   }
 
   uncompleteAll() {
-    this.todos = this.todos.map(t => {
+    let todos = this.todos.getValue();
+    
+    
+    todos = todos.map(t => {
       t.completed = false;
       return t;
     });
+    
+    
+    this.todos.next(todos);
   }
 }

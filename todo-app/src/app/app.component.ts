@@ -11,8 +11,11 @@ export class AppComponent {
   title = 'todo app';
   newTodoText: string;
   todos: Todo[];
+
   constructor(private store: TodoStoreService) {
-    this.todos = this.store.todos;
+     this.store.todos.subscribe(todos => {
+      this.todos = todos;
+    })
   }
   
   addTodo(e) {
