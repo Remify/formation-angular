@@ -1,30 +1,12 @@
 <main role="main" class="container todo-wrapper">
 
+  
   <div class="todo-wrapper--title">
     <h1>Todos</h1>
   </div>
-  <div class="todo-wrapper--input">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text pointer" (click)="completeAll()" id="basic-addon1" *ngIf="countCompleted(todos) < todos.length; else allCompleted">
-            <i class="fa fa-angle-right"></i>
-        </span>
-        <ng-template #allCompleted>
-            <span class="input-group-text pointer" (click)="uncompleteAll(todos)">
-                <i class="fa fa-angle-down"></i>
-            </span>
-        </ng-template>
-      </div>
-      <input type="text" class="form-control" placeholder="todo" autofocus="" (keyup.enter)="addTodo($event)">
-    </div>
-  </div>
-  <div class="todo-wrapper--todos d-flex flex-column">
-    <div *ngFor="let todo of todos" class="todo-wrapper--todo p-2 border">
-      <app-todo [task]="todo" (onDelete)="onTodoDelete($event)"></app-todo>
-    </div>
-  </div>
-  <div class="todo-footer d-flex justify-content-between" *ngIf="todos.length > 0">
-    <div>{{ pendingTasks(todos) }}  tâche<span *ngIf="pendingTasks(todos) > 1">s</span> restante<span *ngIf="pendingTasks(todos) > 1">s</span></div>
-    <div class="todo-footer--clear" *ngIf="countCompleted(todos) > 0" (click)="clearCompleted()">Nettoyer</div>
-  </div>
+
+  <router-outlet></router-outlet>
+
+  <br>
+  <div><a routerLink="">Home</a> -  <a routerLink="register">Créer un compte</a></div>
 </main>

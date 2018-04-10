@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    color: red;
+    opacity: 0.4;
+}
+
+.todo-wrapper {
+    font-size: 1.2em;
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+.todo-footer--clear:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.todo-wrapper--todo {
+    border-top: 0px!important
+}
+
+.todo-wrapper--todo:first-child {
+    border-top: 1px solid #dee2e6 !important;
+}
+
+.todo-wrapper--input .input-group-text, .todo-wrapper--input input {
+    border-radius: 0px;
+    font-size: 1.2em;
+}
+
+.input-group-text {
+    width: 40px;
+    text-align: center;
+    font-size: 22px;
+}
