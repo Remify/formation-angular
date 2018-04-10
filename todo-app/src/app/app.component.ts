@@ -17,6 +17,7 @@ export class AppComponent {
       this.todos = todos;
     })
   }
+
   
   addTodo(e) {
     const title: string = e.target.value;
