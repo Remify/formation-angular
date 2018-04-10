@@ -6,11 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
-<<<<<<< HEAD
-import { HttpClientModule } from '@angular/common/http';
-=======
-import { HttpService } from './shared/http.service';
->>>>>>> master
 
 @NgModule({
   declarations: [
