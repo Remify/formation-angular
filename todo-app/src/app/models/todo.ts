@@ -1,4 +1,5 @@
 export class Todo {
+	id: number;
     completed: Boolean;
     title: string;
     

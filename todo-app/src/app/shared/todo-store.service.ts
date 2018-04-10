@@ -1,42 +1,74 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/todo';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { HttpService } from './http.service';
 
 @Injectable()
 export class TodoStoreService {
 
-  public todos: Todo[] = [];
-  constructor() { }
+  public todos: BehaviorSubject<Todo[]> = new BehaviorSubject([]);
+  constructor(private http: HttpService) {
+    this.refresh();
+  }
+  
+  refresh() {
+    this.http.get().subscribe(
+      (todos) => {
+      this.todos.next(todos)
+    }
+  )
+  }
 
   add(title: string) {
     if (title) {
-      this.todos.push(new Todo(title));
+      const current = this.todos.getValue();
+      // current.push(new Todo(title))
+      // this.todos.next(current);
+      this.http.post(new Todo(title)).subscribe((todos) => {
+        this.todos.next(todos);
+      })
     }
   }
   
   delete(t: Todo) {
-    this.todos.splice(this.todos.indexOf(t), 1);
+    const current = this.todos.getValue();
+   this.http.delete(t.id).subscribe(() => {
+    this.refresh();
+   })
+    // this.todos.next(current);
   }
   
   update(old: Todo, title: string) {
-    const i = this.todos.indexOf(old);
-    this.todos[i] = new Todo(title)
+    const current = this.todos.getValue();
+    const i = current.indexOf(old);
+    current[i] = new Todo(title)
+    this.todos.next(current);
   }
 
   clearCompleted() {
-    this.todos = this.todos.filter(t => !t.completed);
+    let current = this.todos.getValue();
+    current = current.filter(t => !t.completed);
+    this.todos.next(current);
   }
 
   completeAll() {
-    this.todos = this.todos.map(t => {
+    let current = this.todos.getValue();
+
+    current = current.map(t => {
       t.completed = true;
       return t;
     });
+
+    this.todos.next(current);
   }
 
   uncompleteAll() {
-    this.todos = this.todos.map(t => {
+    let current = this.todos.getValue();
+    current = current.map(t => {
       t.completed = false;
       return t;
     });
+
+    this.todos.next(current);
   }
 }
