@@ -47,3 +47,29 @@ Dans AppComponent template en bas de page, créer un menu :
     </div>
 
 ### 5. Création du formulaire d'inscription
+
+Créer un formulaire html avec les champs suivants: 
+
+- Login: input text required
+- Email: input email required
+- Password: input password required
+- Confirm Password: input password required
+
+### 6. Branchement de la logique Angular 
+
+Transformer le template html en formulaire `template driven`. Voir https://angular.io/guide/forms
+
+Créer une classe représant le formulaire :
+
+    ng g class components/register/user-registration
+
+Renseigner les champs :
+
+    export class UserRegistration {
+        login: string;
+        email: string;
+        password: string;
+    }
+
+A l'aide de la directive `[(ngModel)]`, associer chaque champ à sont input.
+
