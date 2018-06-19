@@ -16,9 +16,12 @@ Exemple application : http://todomvc.com/examples/angular2/
 
 ## Documentation
 
-- Documentation Angular : [Officielle](https://angular.io/docs) | 
+- Documentation Angular : [Officielle](https://angular.io/docs)
+- Documentation TypeScript : [Officielle](https://www.typescriptlang.org/docs/)
 - Reactive Programming : [Introduction](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) | [RxJS Docs](http://reactivex.io/rxjs/) | [Comprendre RxJS](http://rxmarbles.com/)
 
 ## Les sessions
 
 - [Session 1](./session1.md)
+- [Session 2](./session2.md)
+- [Session 3](./session3.md)
