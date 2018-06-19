@@ -1,5 +1,10 @@
 # Formation Angular
 
+Cette formation a pour objectif de présenter les principes clés autour du framework Angular. Dans le cadre de la formation une application pour la gestion de tâche sera à développer. 
+
+- Todo app : http://todomvc.com/
+- Todo app Angular : http://todomvc.com/examples/angular2/
+
 Documents :
 - Presentation ppt : [slides](./slides.pdf)
 - Source : https://github.com/Remify/formation-angular

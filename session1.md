@@ -16,6 +16,8 @@ Regarder l'oganisation du projet :
 
 ## Premiers composants
 
+Pour chaque instruction ci dessous, un commit avec le code à produire est disponible dans l'historique des commits ou sur [Github](https://github.com/Remify/formation-angular/commits/master).
+
 ### 1. `app.component.ts` & `app.component.html`
 
 * Quel est la balise de AppComponent ?
@@ -23,15 +25,17 @@ Regarder l'oganisation du projet :
 
     Voir aussi : https://angular.io/guide/architecture
 
-### 2. Créez un champ input qui modifie la propriété `title` à l'aide de la directive `ngModel` 
+### 2. Créer un champ input qui modifie la propriété `title` à l'aide de la directive `ngModel` 
 
-    Voir [documentation](https://angular.io/tutorial/toh-pt1#edit-the-hero)
+Voir la [documentation](https://angular.io/tutorial/toh-pt1#edit-the-hero)
 
-    **Quel comportement pouvons nous apercevoir ?**
+- Quel comportement pouvons nous apercevoir ?
 
-### 3. Créez le layout de votre todo-app dans `app.component.html`
+### 3. Créer le layout de votre todo-app dans `app.component.html`
 
-    Le layout devra être centré autour d'un champ input et d'une liste de texte.
+Comme sur http://todomvc.com/examples/angular2/. 
+
+    Le layout devra encapsuler un champ input et une liste de texte autour d'un div centré.
 
 ### 4. Afin de faciliter le travail sur les interfaces, ajoutons bootstrap !
 
@@ -47,17 +51,18 @@ Ajouter les styles bootstrap et font-awesome au projet dans `./angular-cli.json`
         "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
 
-Nous sommes maintenant prêt à créer nos composants todo !
+Nous sommes maintenant prêt à développer des composants !
 
-### 5. Créez un composant todo 
+### 5. Création d'un composant todo 
 
 Nous allons créer un composant qui va servir de représentation pour 1 tâche todo. Ce composants se trouvera dans un dossier `components`.
+Pour créer le composant à l'aide de la CLI :
 
     ng g c components/todo
 
 Ajoutez le composant `TodoComponent` à `AppComponent` en utilisant l'appel par balise dans `app-component.html`.
 
-### 6. Créez une classe typescript représentant une tâche.
+### 6. Créer une classe typescript représentant une tâche.
 
 Pour générer la class Todo.ts dans le dossier models avec la CLI :
 
@@ -65,9 +70,20 @@ Pour générer la class Todo.ts dans le dossier models avec la CLI :
 
 Ajoutez à la classe Todo les propriétés `title` et `completed`.
 
-### 7. Modifiez `TodoComponent` pour qu'il représente une tâche 
+    export class Todo {
+        completed: Boolean;
+        title: string;
+        
+        constructor(title: String) {
+            this.completed = false;
+            this.title = title.trim();
+        }
+    }
 
-A l'aide du decorateur `@Input()` passez une tâche de type *Todo* à `TodoComponent`
+
+### 7. Modifier `TodoComponent` pour qu'il représente une tâche 
+
+A l'aide du decorateur `@Input()` passez un object `Todo` de `AppComponent`  à `TodoComponent`
 
     import { Input } from '@angular/core';
     ...
@@ -77,7 +93,7 @@ Créer une tâche dans AppComponent et passez la à `TodoComponent`.
 
 Faites en sorte que le template de `TodoComponent` affiche l'état d'une tâche (propriétés completed & title)
 
-### 8. Affichez une liste de TodoComponent
+### 8. Afficher une liste de TodoComponent
 
 Dans AppComponent, créez une liste de Todo.
 
@@ -88,7 +104,7 @@ Dans AppComponent, créez une liste de Todo.
 
 Afficher une liste de composants TodoComponent à l'aide de la balise `*ngFor`
 
-### 9. Gérez un compteur de tâches restantes
+### 9. Gérer un compteur de tâches restantes
 
 Faire un double binding ( `[(ngModel)]` ) entre la propriété `completed` et une checkbox.
 
